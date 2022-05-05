@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="kakunin.css">
+    <title>確認テスト</title>
+  </head>
+  <body>
+    <h1>わたしのテスト</h1>
+    <form name="kakunin">
+        <p>私の性別は？</p>
+        <p>
+        <input type="radio" name="sex" value="Q1">女
+        <input type="radio" name="sex" value="Q1">男
+        </p>
+        <p>DICの何月期生？</p>
+        <p>
+        <input type="radio" name="Q2">1月
+        <input type="radio" name="Q2">3月
+        <input type="radio" name="Q2">5月
+        </p>
+        <p>私の出身地は？</p>
+        <p>
+        <input type="radio" name="Q3">東京都
+        <input type="radio" name="Q3">福井県
+        <input type="radio" name="Q3">長崎県
+        </p>
+        <p>私の趣味は？</p>
+        <p>
+        <input type="radio" name="Q4">ダンス
+        <input type="radio" name="Q4">将棋
+        <input type="radio" name="Q4">読書
+        </p>
+        <input type="button" value="採点" onclick="saiten()" />
+    </form>
+  </body>
+</html>
+
+
+
+<script>
+function saiten(){
+
+  var seikai=0; //正解数を入れる変数
+
+  //答えの番号を配列に入れる
+  var trueAns = new Array(0,4,7,8);
+
+  //正解のラジオボタンがチェックされているか確認
+  for (i=0 ; i<4 ; i++)
+  {
+    if( document.kakunin.elements[trueAns[i]].checked )
+      seikai++;
+  }
+
+  alert("あなたは"+seikai*25+"点でした！");
+}
+</script>
